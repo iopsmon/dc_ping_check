@@ -37,6 +37,11 @@ Files:
 
 Install:
 
+This app should be installed only on a Search Head, UF, HF, or All in one Splunk instance
+It was only tested on Splunk on Linux, so will not work on Splunk Windows
+
+If you do use it on seperate Splunk instances, you will need to add the indexs.conf, onto the Indexing layer, this configures the index.
+
     Download the zip and extract the file, copy the DC_ping_check folder to the Splunk Server
     sudo cp -R DC_ping_check /opt/splunk/etc/apps
     sudo chown -R splunk:splunk /opt/splunk/etc/apps
