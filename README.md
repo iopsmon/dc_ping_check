@@ -62,4 +62,6 @@ Run crontab -e (as user Splunk) and add the below
 */10 * * * * /opt/splunk/bin/splunk cmd python3 /opt/splunk/etc/apps/DC_ping_check/bin/scripts/dc_ping_server_v0.4.py
 
 Use:
-Login to Splunk and go DC_ping_check app and select dashboards, you should see the you should see data 
+Login to Splunk and go DC_ping_check app and select dashboards, you should see the you should see data.
+
+Allow the dashboard to generate data, the last time update just shows the last ingest time, the status for the servers will look around 5 minutes behind, but thats ok, it will catch up and each server's time will be slightly different, remember this is just a 10 minute polling cycle check.
