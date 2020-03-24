@@ -19,7 +19,7 @@ Application Features:
 
 - KV Store used for faster response - shows table status
 
-Data Confif:
+Data Config:
 csv data
 data kept for 7 days
 index=ping
@@ -42,10 +42,9 @@ Install:
     sudo chown -R splunk:splunk /opt/splunk/etc/apps
     sudo -u splunk /opt/splunk/bin/splunk restart
 
-
 Config:
 
-The indexes and sourcetype will be created, see inputs, props and transforms. 
+The indexes and sourcetype will be created, see inputs, props and transforms.
 
 The ping runs every 10 minutes, data is saved into the output_status.csv file, a saved search pipes this data into the ping collections kvstore.  
 
