@@ -23,7 +23,7 @@ print("\033[1;32;40m =================  Starting Ping Test =================  \n
 
 #Date Format 
 MyDate = datetime.datetime.now()
-print(MyDate.strftime("%d %m %Y %I:%M:%S")) 
+print(MyDate.strftime("%d %m %Y %H:%M:%S")) 
 
 
 name = {}
@@ -41,11 +41,11 @@ status = {}
 #Write Headers to csv file 
 with open('/opt/splunk/etc/apps/DC_ping_check/data/output_status.csv', 'w', newline='') as outcsv:
     writer = csv.writer(outcsv)
-    writer.writerow(["date", "server_name", "short_name", "status","ip_address"]) 
+    writer.writerow(["date","server_name","short_name","status","ip_address"]) 
 
 #Read server list in csv file and create a dictionary - the name is CI_Name, then ping the server
 # And check status and ip information and write to csv file  
-with open('/opt/splunk/etc/apps/DC_ping_check/data/servers.csv', 'r', newline='') as csvinput:
+with open('/opt/splunk/etc/apps/DC_ping_check/lookups/servers.csv', 'r', newline='') as csvinput:
 #with open('myfile', 'r', newline='') as csvinput:
     reader = csv.DictReader(csvinput)
     for rows in reader:
@@ -70,7 +70,7 @@ with open('/opt/splunk/etc/apps/DC_ping_check/data/servers.csv', 'r', newline=''
             ip = 'Not Found'
         with open('/opt/splunk/etc/apps/DC_ping_check/data/output_status.csv', 'a', newline='') as csvoutput:
             output = csv.writer(csvoutput)
-            output.writerow([MyDate.strftime("%d %m %Y %I:%M:%S")] + [hostname] + [data] + [status] + [ip])
+            output.writerow([MyDate.strftime("%d %m %Y %H:%M:%S")] + [hostname] + [data] + [status] + [ip])
 
 #How long script took to run 
 print("--- Seconds %s  ---" % (time.time() - start_time))
