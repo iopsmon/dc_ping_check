@@ -84,7 +84,7 @@
         <option name="totalsRow">false</option>
         <option name="wrap">true</option>
         <format type="color" field="status">
-          <colorPalette type="expression">if (like(value,"%Unreachable%"),"#FF5733","#228B22")</colorPalette>
+          <colorPalette type="expression">if (like(value,"%Unreachable%"),"#FF5733","#53A051")</colorPalette>
         </format>
       </table>
     </panel>
